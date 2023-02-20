@@ -15,7 +15,7 @@ Sous la direction de :
 Nous souhaitons nous doter d'un site de location de véhicules en ligne.
 
 # Travail demandé
-Il vous est demandé de mettre en place un site permettant de créer, modifier, afficher et supprimer des véhicules. Il doit permettre à un utilisateur de réserver un véhicule qu'il désire louer. Il doit être en mesure de vérifier la disponibilité du véhicule pour la période choisie par l'utilisateur.
+Il nous est demandé de mettre en place un site permettant de créer, modifier, afficher et supprimer des véhicules. Il doit permettre à un utilisateur de réserver un véhicule qu'il désire louer. Il doit être en mesure de vérifier la disponibilité du véhicule pour la période choisie par l'utilisateur.
 
 # Quoi utiliser ?
 Il est recommandé :
