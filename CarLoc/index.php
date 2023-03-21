@@ -214,7 +214,7 @@ footer {
             <div class="container px-4 px-lg-5 h-100">
                 <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-8 align-self-end">
-                       <span> <h1 class="text-white font-weight-bold">Reserver votre voiture en un clic !</h1></span>
+                       <span> <h1 class="text-white font-weight-bold">Réserver votre voiture en un clic !</h1></span>
                         <hr class="divider" />
                     </div>
                     <div class="col-lg-8 align-self-baseline">
@@ -346,7 +346,7 @@ footer {
                             
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                <label for="phone">Numéro Téléphone</label>
+                                <label for="phone">Numéro téléphone</label>
                                 <div class="invalid-feedback" data-sb-feedback="phone:required">Entrez un numéro de téléphone.</div>
                             </div>
                             
@@ -404,7 +404,7 @@ footer {
             <div>
                 <i class="fa fa-map-marker"></i>
                 <p><span>Rte de Mende, 34090 Montpellier</span>
-                    Motpellier</p>
+                    Montpellier</p>
             </div>
 
             <div>
