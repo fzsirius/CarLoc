@@ -12,7 +12,7 @@ if (!empty($_POST)) { // Vérifie s'il y a des données soumises via la méthode
         $mdp = trim($mdp); // Supprime les espaces blancs au début et à la fin de la variable $mdp
     }
 
-    if (empty($email)) { // Vérifie si la variable $email est vide
+    if (empty($email)) { // Vérifie si la variable email est vide
         $valid = false; // Définit la variable $valid à false
         $err_email = "<span class='$errorClass'>Email obligatoire</span>"; // Définit la variable $err_email à un message d'erreur
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) { // Vérifie si la variable $email est une adresse email valide
