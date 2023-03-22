@@ -218,7 +218,7 @@ footer {
                         <hr class="divider" />
                     </div>
                     <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 mb-5">CarLoc est un site de location de voitures simple et facile d'utilisation, qui propose une large gamme de véhicules pour répondre à tous vos besoins. Que vous ayez besoin d'une petite citadine pour vous déplacer en ville ou d'un grand SUV pour partir à l'aventure, vous trouverez ce qu'il vous faut chez CarLoc.!</p>
+                        <p class="text-white-75 mb-5">CarLoc est un site de location de voitures simple et facile d'utilisation, qui propose une large gamme de véhicules pour répondre à tous vos besoins. Que vous ayez besoin d'une petite citadine pour vous déplacer en ville ou d'un grand SUV pour partir à l'aventure, vous trouverez ce qu'il vous faut chez CarLoc !</p>
                         <a class="btn btn-primary btn-xl" href="#about">En savoir plus</a>
                     </div>
                 </div>
@@ -262,7 +262,7 @@ footer {
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
                             <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">Pour une expérience réussi</h3>
+                            <h3 class="h4 mb-2">Pour une expérience réussie</h3>
                         </div>
                     </div>
                 </div>
@@ -339,14 +339,14 @@ footer {
                             
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                <label for="email">addresse Email </label>
-                                <div class="invalid-feedback" data-sb-feedback="email:required">entrez votre e_mail.</div>
+                                <label for="email">Adresse email </label>
+                                <div class="invalid-feedback" data-sb-feedback="email:required">Entrez votre email.</div>
                                 <div class="invalid-feedback" data-sb-feedback="email:email">Email non valide.</div>
                             </div>
                             
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                <label for="phone">Numéro téléphone</label>
+                                <label for="phone">Numéro de téléphone</label>
                                 <div class="invalid-feedback" data-sb-feedback="phone:required">Entrez un numéro de téléphone.</div>
                             </div>
                             
