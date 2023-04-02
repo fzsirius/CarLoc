@@ -1,5 +1,4 @@
-test read me
-# projet de création d'une application web de location de voiture : CarLoc
+# projet de création d'une APPLICATION WEB de location de voiture : CarLoc
 
 ### Membre du groupe :
 #### Karim TCHERE,
