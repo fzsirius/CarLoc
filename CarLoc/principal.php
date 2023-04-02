@@ -1,12 +1,13 @@
-    <!DOCTYPE html>
+<?php
+    session_start();
+?>  
+
+  <!DOCTYPE html>
 <html>
   <head>
-  
     <meta charset="utf-8">
     <title>Principal</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-	<!-- Lien vers le fichier CSS de Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 	
 	<style>
 body {
@@ -14,10 +15,12 @@ body {
 }
 
 .container {
+  position: relative;
+  top: 50px;
   display: flex;
   justify-content: center;
   padding: 50px 0;
-  background-image: url('assets/img/OIP.jpeg');
+  background-image: url('assets/img/a.jpg');
   background-size: cover;
   width: 100%; 
 }
@@ -30,6 +33,7 @@ form {
   border-radius: 10px;
   padding: 30px;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+  margin: 45px;
 }
 
 label {
@@ -54,23 +58,26 @@ input[type="submit"] {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 input[type="submit"]:hover {
   background-color: #0069d9;
+  transform: scale(1.05);
 }
-
-
-
 
 
 	</style>
   </head>
   <body>
   
-  
-  
   <?php
+  require_once("nav.php");?>
+  
+  
+  
+  
+	<?php
 	
 	//le but ici est de récuperer les données de la base
 		  require_once('include.php'); // Charge le fichier include.php
@@ -89,17 +96,11 @@ input[type="submit"]:hover {
 			  $resultat = $conn->query("SELECT DISTINCT annee FROM Voiture ORDER BY annee DESC");
 			  $annees = $resultat->fetchAll(PDO::FETCH_COLUMN);
 
-			 // $resultat = $conn->query("SELECT DISTINCT nbre_sieges FROM Voiture ORDER BY nbre_sieges ASC");
-			 // $sieges = $resultat->fetchAll(PDO::FETCH_COLUMN);
+			  $resultat = $conn->query("SELECT DISTINCT nbre_sieges FROM Voiture ORDER BY nbre_sieges ASC");
+			  $sieges = $resultat->fetchAll(PDO::FETCH_COLUMN);
 
 			  $resultat = $conn->query("SELECT DISTINCT type_energie FROM Voiture ORDER BY type_energie ASC");
 			  $energies = $resultat->fetchAll(PDO::FETCH_COLUMN);
-			  
-			  $resultat = $conn->query("SELECT DISTINCT marque FROM Voiture ORDER BY marque ASC");
-			  $marques = $resultat->fetchAll(PDO::FETCH_COLUMN);
-			  
-			  $resultat = $conn->query("SELECT DISTINCT model FROM Voiture ORDER BY model ASC");
-			  $models = $resultat->fetchAll(PDO::FETCH_COLUMN);
 
 			  $resultat = $conn->query("SELECT DISTINCT categorie FROM Voiture ORDER BY categorie ASC");
 			  $categories = $resultat->fetchAll(PDO::FETCH_COLUMN);
@@ -108,29 +109,24 @@ input[type="submit"]:hover {
 			  echo "Erreur : " . $e->getMessage();
 			}
 
+			// Récupération des données de la table "client"
+			
 			// Fermeture de la connexion à la base de données
 			$conn = null;
 
 		  ?>
-  
- 
+		  
+		  
+		  
     <div class="container">
       <form method="post" action="resultats.php"> <!-- J'AI MIS LE PARAMETRE ACTION POUR ALLER VERS UNE NOUVELLE PAGE APRES LE FORMULAIRE-->
-        <label for="marque">Marque:</label>
-		<select id="marque" name="marque">
-			<option value="toutes">Toutes</option>
-			<?php foreach ($marques as $marque) { ?>
-				<option value="<?= $marque ?>"><?php echo $marque; ?></option>
-			<?php } ?>
-		</select>
+        <label>Marque:</label>
+        <input type="text" name="brand">
 
-        <label for="model">Modèle:</label>
-		<select id="model" name="model">
-			<option value="tous">Tous</option>
-			<?php foreach ($models as $model) { ?>
-				<option value="<?= $model ?>"><?php echo $model; ?></option>
-			<?php } ?>
-		</select>
+        <label>Modèle:</label>
+        <input type="text" name="model">
+		
+		
 
 		<label for="annee">Année:</label>
 		<select id="annee" name="annee">
@@ -142,9 +138,12 @@ input[type="submit"]:hover {
 			?>
 		</select>
 
+			  
+
+
 		<label for="type_energie">Energie:</label>
 		<select id="type_energie" name="energie">
-			<option value="toutes">Toutes</option>
+			<option value="tous">Toutes</option>
 			<?php foreach ($energies as $energie) { ?>
 				<option value="<?= $energie ?>"><?php echo $energie; ?></option>
 			<?php } ?>
@@ -168,18 +167,31 @@ input[type="submit"]:hover {
 
         <input type="submit" name="search" value="Recherche">
       </form>
-	  
     </div>
 	
-	
 	<br/><br/><br/>
-	<center>
-	<div>
 	
-	
+	<?php
 
 
-</div><br/>
-	</center>
+// Vérifier si une session est active
+if (!isset($_SESSION['client'])) {
+    // Afficher les liens "Nouveau Client" et "Se connecter"
+    echo '<a href="nouveau.php">Nouveau Client</a>';
+    echo '<BR/>';
+    echo '<a href="connexion.php">Se connecter</a>';
+} else {
+    // Afficher un message de bienvenue et un lien pour se déconnecter
+    echo 'Bienvenu ' . $_SESSION['client']['prenom'] . ' ' . $_SESSION['client']['nom']." ". $_SESSION['client']['id'];
+    echo '<BR/>';
+    echo '<BR/>';
+    echo '<a href="deconnexion.php">Se déconnecter</a>';
+    echo '<BR/>';echo '<BR/>';
+    echo '<a href = panier.php>Mon panier</a>';
+     echo '<BR/>';echo '<BR/>';
+     echo '<a href="profil_client.php">Profil</a>';
+   // echo '<a href = "articles/article">Ajouter article au panier</a>';
+}
+?>
   </body>
 </html>
