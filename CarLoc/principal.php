@@ -20,7 +20,7 @@ body {
   display: flex;
   justify-content: center;
   padding: 50px 0;
-  background-image: url('assets/img/a.jpg');
+  background-image: url('images/ab.jpg');
   background-size: cover;
   width: 100%; 
 }
