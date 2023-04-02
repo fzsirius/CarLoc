@@ -9,6 +9,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<style>
+        	/*-- ---------------------------------------------------- debut style ------------------------------------------------------*/
+
 		.carousel-inner img {
 			width: 100%;
 			height: 500px;
@@ -115,16 +117,13 @@ ul li {
 
 
 
-
         
-        /*---------------------------------------------connexion---------------------------------------*/
-a{
-	text-decoration: none;
-}
-#entete .connexion {
+        /*---------------------------------------------logconnexionin---------------------------------------*/
+
+#login-btn {
   
-	opacity: 0.8;
-  color: white;
+	
+  color: black;
   padding: 14px 20px;
   margin: 8px 0;
   border: 1px solid #F30;
@@ -135,7 +134,7 @@ a{
 	z-index: 10;position: absolute;
 }
 
-#entete .connexion:hover {
+#login-btn:hover {
   opacity: 1;background-color: #F30;border: none;
 }
 
@@ -188,17 +187,116 @@ form.border button:hover {
 form.border button:focus {
   outline: none;
 }
-   
+   /* Style pour la boîte de dialogue modale */
+.modal {
+  display: none; /* caché par défaut */
+  position: fixed; /* position fixe */
+  z-index: 1; /* pour être au-dessus du reste du contenu */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4); /* couleur de fond semi-transparente */
+}
+
+/* Style pour le contenu de la boîte de dialogue modale */
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+  text-align: center;
+}
+
+/* Style pour les boutons dans la boîte de dialogue modale */
+.modal-content button {
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+/* Style pour le bouton de fermeture de la boîte de dialogue modale */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+	/*-- ---------------------------------------------------- fin style ------------------------------------------------------>
+
 	</style>
 </head>
 <body>
 <div id="entete">
-<!-- ----------------------------------------------------connexion ---------------------->
-<a href="connexion.php" class="connexion">Login</a>
+<!-- ----------------------------------------------------Lien connexion ---------------------->
+<button id="login-btn">Login</button>
 
+<div id="login-modal" class="modal">
+  <div class="modal-content">
+    <h2>Connexion</h2>
+    <p>Choisissez votre type de compte:</p>
+    <button id="client-btn">Client</button>
+    <button id="admin-btn">Admin</button>
+  </div>
+</div>
 
- <!-- ----------------------------------------------------------------------------------------------->
-	<!-- Images de profils -->
+<script>
+    // Récupération des éléments HTML
+var loginBtn = document.getElementById("login-btn");
+var modal = document.getElementById("login-modal");
+var clientBtn = document.getElementById("client-btn");
+var adminBtn = document.getElementById("admin-btn");
+
+// Fonction pour afficher la boîte de dialogue modale
+function showModal() {
+  modal.style.display = "block";
+}
+
+// Fonction pour masquer la boîte de dialogue modale
+function hideModal() {
+  modal.style.display = "none";
+}
+
+// Ajout d'un événement au bouton "Login"
+loginBtn.addEventListener("click", showModal);
+
+// Ajout d'un événement au bouton "Client"
+clientBtn.addEventListener("click", function() {
+  // Rediriger l'utilisateur vers la page de connexion client
+  window.location.href = "connexion.php";
+});
+
+// Ajout d'un événement au bouton "Admin"
+adminBtn.addEventListener("click", function() {
+  // Rediriger l'utilisateur vers la page de connexion admin
+  window.location.href = "connexion_admin.php";
+});
+
+// Ajout d'un événement pour masquer la boîte de dialogue modale lorsque l'utilisateur clique en dehors de la boîte
+window.addEventListener("click", function(event) {
+  if (event.target == modal) {
+    hideModal();
+  }
+});
+
+    
+    </script>
+
+ <!-- ----------------------------------------------Carrousel d'images------------------------------------------------->
+
 	<div id="demo" class="carousel slide" data-ride="carousel">
 
 		<!-- Indicateurs de position -->
@@ -243,12 +341,12 @@ form.border button:focus {
 
 	</div>
 
-    <!-- Section "Comment ça marche" -->
+            	<!-- ---------------------------------------------------- Section "Comment ça marche" ------------------------------------------------------>
 <section id="comment-ca-marche-section" class="bg-light my-5">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="text-center">Comment ça marche</h1>
+				<h1 class="text-center">Comment ça marche ?</h1>
 			</div>
 		</div>
 		<div class="row">
@@ -280,7 +378,7 @@ form.border button:focus {
 	</div>
 </section>
     
-	<!-- Section "Nos voitures" -->
+           	<!-- ---------------------------------------------------- Section "Nos voitures" ------------------------------------------------------>
 	<section class="my-5">
 		<div class="container-fluid">
 			<div class="row">
@@ -290,7 +388,7 @@ form.border button:focus {
                 			<?php
 // connexion à la bd
 $conn = mysqli_connect('localhost', 'root', '', 'karim_carloc');
-// Checker la connection
+// Check connection
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
@@ -350,7 +448,7 @@ mysqli_close($conn);
 </section>
 
 
-<!-- section contact-->
+               	<!-- ---------------------------------------------------- section contact ------------------------------------------------------>
 <section class="my-5">
 	<div class="container-fluid">
 		<div class="row">
@@ -390,7 +488,8 @@ mysqli_close($conn);
     
     
     
-<!-- Section "Footer" -->
+                   	<!-- ----------------------------------------------------  Section "Footer" ------------------------------------------------------>
+
 <footer>
   <div class="footer-wrapper">
     <div class="footer-section">
@@ -400,39 +499,25 @@ mysqli_close($conn);
     <div class="footer-section">
       <h3>Nous contacter</h3>
       <ul>
-        <li>Téléphone: 01 23 45 67 89</li>
-        <li>Email: contact@carloc.com</li>
-        <li>Adresse: 123 rue de la République, 75001 Paris</li>
+        <li>Téléphone: +33 754202462</li>
+        <li>Email: tcherekarim@gmail.com</li>
+        <li>Adresse: Route de mende, Montpellier 34000</li>
       </ul>
     </div>
     <div class="footer-section">
       <h3>Suivez-nous</h3>
       <ul class="social-links">
-        <li><a href=""><i class="fab fa-facebook"></i></a></li>
-        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-      </ul>
+          <a href="https://www.facebook.com/">Facebook</a>
+          <BR/>
+          <a href="https://www.instagram.com/">Instagram</a>
+          <BR/>
+          <a href="https://twitter.com/">Twiter</a>      
+        </ul>
     </div>
     
       
   </div>
 </footer>
-
-
-<!-- Script pour le menu mobile -->
-<script>
-	const menuBtn = document.querySelector(".menu-btn");
-	let menuOpen = false;
-	menuBtn.addEventListener("click", () => {
-		if (!menuOpen) {
-			menuBtn.classList.add("open");
-			menuOpen = true;
-		} else {
-			menuBtn.classList.remove("open");
-			menuOpen = false;
-		}
-	});
-</script>
 </body>
 </html>
 
