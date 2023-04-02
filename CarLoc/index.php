@@ -113,28 +113,11 @@ ul li {
   margin-bottom: 10px;
 }
 
-.social-links li {
-  display: inline-block;
-  margin-right: 10px;
-}
 
-.social-links li:last-child {
-  margin-right: 0;
-}
-
-.social-links a {
-  color: #fff;
-  font-size: 20px;
-  transition: all 0.3s ease-in-out;
-}
-
-.social-links a:hover {
-  color: #F30;
-}
 
 
         
-        /*---------------------------------------------logconnexionin---------------------------------------*/
+        /*---------------------------------------------connexion---------------------------------------*/
 a{
 	text-decoration: none;
 }
@@ -210,12 +193,12 @@ form.border button:focus {
 </head>
 <body>
 <div id="entete">
-<!-- ----------------------------------------------------Login ---------------------->
+<!-- ----------------------------------------------------connexion ---------------------->
 <a href="connexion.php" class="connexion">Login</a>
 
 
  <!-- ----------------------------------------------------------------------------------------------->
-	<!-- Carrousel d'images -->
+	<!-- Images de profils -->
 	<div id="demo" class="carousel slide" data-ride="carousel">
 
 		<!-- Indicateurs de position -->
@@ -305,27 +288,27 @@ form.border button:focus {
 					<h1 class="text-center">Nos voitures</h1>
 				</div>
                 			<?php
-// Connect to the database
+// connexion à la bd
 $conn = mysqli_connect('localhost', 'root', '', 'karim_carloc');
-// Check connection
+// Checker la connection
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-// Set the number of cars to display per page
+// Définir le nombre de voitures à afficher par page
 $limit = 20;
 
-// Get the current page number from the URL, or default to 1
+// Récupère le numéro de la page actuelle à partir de l'URL, ou par défaut 1
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
 
-// Calculate the offset
+// Calcule le décalage
 $offset = ($page - 1) * $limit;
 
-// Retrieve the cars to display
+// Récupérer les voitures à afficher
 $sql = "SELECT * FROM voiture LIMIT $offset, $limit";
 $result = mysqli_query($conn, $sql);
 
-// Display the cars in a grid
+// Affiche les voitures dans une grille
 if (mysqli_num_rows($result) > 0) {
   while($row = mysqli_fetch_assoc($result)) {
     echo '
@@ -346,16 +329,16 @@ if (mysqli_num_rows($result) > 0) {
   echo "Aucune voiture n'est disponible pour le moment.";
 }
 
-// Retrieve the total number of cars
+// Récupérer le nombre total de voitures
 $sql = "SELECT COUNT(*) AS total FROM voiture";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 $total_cars = $row['total'];
 
-// Calculate the total number of pages
+// Calcule le nombre total de pages
 $total_pages = ceil($total_cars / $limit);
 
-// Display the "Voir plus" button if there are more pages
+// Affiche le bouton "Voir plus" s'il y a plus de pages
 if ($page < $total_pages) {
   echo '<div class="col-12 text-center"><a href="index.php?page=4'.($page+1).'" class="btn btn-primary">Voir plus</a></div>';
 }
