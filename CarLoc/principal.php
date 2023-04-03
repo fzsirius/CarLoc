@@ -182,15 +182,10 @@ if (!isset($_SESSION['client'])) {
     echo '<a href="connexion.php">Se connecter</a>';
 } else {
     // Afficher un message de bienvenue et un lien pour se déconnecter
-    echo 'Bienvenu ' . $_SESSION['client']['prenom'] . ' ' . $_SESSION['client']['nom']." ". $_SESSION['client']['id'];
-    echo '<BR/>';
-    echo '<BR/>';
-    echo '<a href="deconnexion.php">Se déconnecter</a>';
-    echo '<BR/>';echo '<BR/>';
-    echo '<a href = panier.php>Mon panier</a>';
-     echo '<BR/>';echo '<BR/>';
-     echo '<a href="profil_client.php">Profil</a>';
-   // echo '<a href = "articles/article">Ajouter article au panier</a>';
+    echo '<center>'.'Bienvenu ' . $_SESSION['client']['prenom'] . ' ' . $_SESSION['client']['nom']/*." ". $_SESSION['client']['id']*/.'</center>';
+    echo '<BR/>';echo '<BR/>';echo '<BR/>';
+    
+ 
 }
 ?>
   </body>
