@@ -99,6 +99,14 @@
       <img src="images/logo.png" alt="Logo">
     </a>
   </div>
+  
+ <div class="nav-links">
+	<a href="graphe.php"> Dashboard</a>
+  </div>
+  
+  
+  
+  
   <div class="nav-links">
     <a href="principal_admin.php">Accueil</a>
     <div class="dropdown">
@@ -108,6 +116,9 @@
         <a href="demandes_recues.php">Demandes Reçues</a>
         <a href="#">Demandes refusé</a>
       </div>
+  
+	  
+
     </div>
         <div class="dropdown">
       <a href="#">Gestion des voitures</a>
