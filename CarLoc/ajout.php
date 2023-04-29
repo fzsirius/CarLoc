@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-	<meta charset="UTF-8">
-	<title>Ajout au panier</title>
-	<style>
-		body {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Lien vers la feuille de style Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  <!-- Lien vers style personnalisée -->
+  <!--<link rel="stylesheet" href="style.css">-->
+  
+  <!-- Lien vers le fichier JavaScript de Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <!-- Lien vers fichier JavaScript personnalisée -->
+  <!--<script src="script.js"></script>-->
+
+  <title>Ajout au panier</title>
+    <style>
+    body {
 			font-family: Arial, sans-serif;
 			background-color: #F5F5F5;
 		}
@@ -43,12 +57,11 @@
 			background-color: #0099ff;
 			color: #fff;
 		}
-
-
-	</style>
+    </style>
 </head>
 <body>
-	<h1>Ajout au panier</h1>
+  <!-- Contenu de la page -->
+    <h1>Ajout au panier</h1>
 	<?php
 	session_start();
 // Vérifier si l'utilisateur est connecté
@@ -143,5 +156,5 @@ if (isset($_SESSION['panier'])) {
     exit();
 }
 ?>
-
-    
+</body>
+</html>

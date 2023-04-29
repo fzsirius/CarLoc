@@ -17,6 +17,7 @@
 		}
 		.carousel-item {
 			height: 500px;
+            
 		}
         
         /* Style spécifique pour la section Comment ça marche */
@@ -119,7 +120,9 @@ ul li {
 
         
         /*---------------------------------------------logconnexionin---------------------------------------*/
-
+a{
+	text-decoration: none;
+}
 #login-btn {
   
 	
@@ -295,8 +298,8 @@ window.addEventListener("click", function(event) {
     
     </script>
 
- <!-- ----------------------------------------------Carrousel d'images------------------------------------------------->
-
+ <!-- ----------------------------------------------------------------------------------------------->
+	<!-- Carrousel d'images -->
 	<div id="demo" class="carousel slide" data-ride="carousel">
 
 		<!-- Indicateurs de position -->
@@ -310,24 +313,14 @@ window.addEventListener("click", function(event) {
 		<div class="carousel-inner">
 			<div class="carousel-item active">
 				<img src="images/image1.jpg" alt="Voiture 1">
-				<div class="carousel-caption">
-					<h3>Location de voitures de luxe</h3>
-					<p>Nous avons une grande variété de voitures haut de gamme pour répondre à tous vos besoins.</p>
-				</div>
 			</div>
 			<div class="carousel-item">
 				<img src="images/image2.jpg" alt="Voiture 2">
-				<div class="carousel-caption">
-					<h3>Voitures économiques</h3>
-					<p>Nous offrons des voitures économiques pour ceux qui cherchent à économiser de l'argent.</p>
-				</div>
+				
 			</div>
 			<div class="carousel-item">
 				<img src="images/image3.jpg" alt="Voiture 3">
-				<div class="carousel-caption">
-					<h3>Service de qualité</h3>
-					<p>Notre équipe est dédiée à vous offrir le meilleur service possible pour rendre votre expérience de location de voiture agréable.</p>
-				</div>
+				
 			</div>
 		</div>
 

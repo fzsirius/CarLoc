@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+     <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--<link rel="stylesheet" href="style.css">-->
+
 	<title>Recommandation de voitures</title>
 	<style>
 		.container {
 			margin: 0 auto;
-			width: 80%;
+			width: 100%;
 			padding-top: 50px;
 		}
 
@@ -20,24 +24,37 @@
 			color: #ccc;
 		}
 
-		table {
-			border-collapse: collapse;
-			width: 100%;
-		}
+	    table {
+        margin: auto;
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 30px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
 
-		th, td {
-			text-align: left;
-			padding: 8px;
-		}
+    th,
+    td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
 
-		tr:nth-child(even) {
-			background-color: #f2f2f2;
-		}
+    th {
+        background-color: #689f38;
+        color: #fff;
+    }
 
-		th {
-			background-color: #4CAF50;
-			color: white;
-		}
+    tr:hover {
+        background-color: #f5f5f5;
+    }
+        #photocar {
+  width: 90px;
+  height: 60px;
+  border-radius: 5%;
+  border: 1px solid;
+}
 	</style>
 </head>
 <body>
@@ -45,6 +62,7 @@
 		<?php
 		session_start();
 		require_once('nav.php');
+		// Remarque : vous devez remplacer les valeurs ci-dessous par les informations de connexion à votre base de données
 		$host = "localhost";
 		$db_name = "karim_carloc";
 		$username = "root";
@@ -91,7 +109,7 @@ $rowCount2 = $stmt2->rowCount();
 	                echo "<td>" . $row2['Series'] . "</td>";
 	                echo "<td>" . $row2['Nbre_sieges'] . "</td>";
 	                echo "<td>" . $row2['Prix_j'] . "</td>";
-	                echo "<td><img src='" . $row2['URL_photo'] . "' width='100px'></td>";
+	                echo "<td><img id = 'photocar' src='" . $row2['URL_photo'] . "' width='100px'></td>";
 	                echo "</tr>";
 	            }
 	            echo "</table>";

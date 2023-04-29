@@ -1,33 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
+      <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Lien vers style personnalisée -->
+  <!--<link rel="stylesheet" href="style.css">-->
 	<title>Historique des commandes</title>
 	<style>
-        body{
-        margin : 100px;
-        }
-		table {
-			border-collapse: collapse;
-			width: 100%;
-		}
+    
+	    table {
+        margin: auto;
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 30px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
 
-		th, td {
-			text-align: left;
-			padding: 8px;
-		}
+    th,
+    td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
 
-		tr:nth-child(even) {
-			background-color: #f2f2f2;
-		}
+    th {
+        background-color: #689f38;
+        color: #fff;
+    }
 
-		th {
-			background-color: #4CAF50;
-			color: white;
-		}
+    tr:hover {
+        background-color: #f5f5f5;
+    }
+
+#photocar {
+  width: 90px;
+  height: 60px;
+  border-radius: 5%;
+  border: 1px solid;
+}
 
 		.container {
 			margin: 0 auto;
-			width: 80%;
+			width: 100%;
 			padding-top: 50px;
 		}
 
@@ -83,7 +100,7 @@ echo "<td>" . $row['Nbre_sieges'] . "</td>";
 echo "<td>" . $row['Prix_j'] . "</td>";
 echo "<td>" . $row['quantite'] . "</td>";
 echo "<td>" . ($row['statut'] ? "Terminée" : "En cours") . "</td>";
-echo "<td><img src='" . $row['URL_photo'] . "' width='100px'></td>";
+echo "<td><img id = 'photocar' src='" . $row['URL_photo'] . "' width='100px'></td>";
 echo "</tr>";
 }
 echo "</table>";

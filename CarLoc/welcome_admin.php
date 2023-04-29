@@ -1,25 +1,25 @@
-<?php
-    session_start();
-    session_unset();
-    session_destroy();
-?>
+<?php session_start();
 
+if (empty($_SESSION['admin'])) {
+    header('Location: login.php');
+    exit;
+}
+
+$nom = $_SESSION['admin']['nom'];
+$prenom = $_SESSION['admin']['prenom'];
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Déconnexion</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-    <!-- Lien vers la feuille de style Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  
+    <title>Connexion réussie</title>
     <style>
         body {
-            background-image: url('assets/img/background.jpg');
+            background-image: url('assets/img/a.jpg');
             background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
+            background-size: 100% 100%;
+            background-attachment: fixed;
         }
 
         .container {
@@ -30,7 +30,7 @@
         }
 
         .card {
-            background-color: #ffffff;
+            background-color: #e6f7ff;
             border-radius: 5px;
             box-shadow: 0 0 50px 0 rgba(0, 0, 255, 0.2);
             padding: 30px;
@@ -46,21 +46,7 @@
             font-size: 1.2rem;
             margin-bottom: 20px;
         }
-
-        a {
-            color: #fff;
-            background-color: #007bff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.2s ease-in-out;
-        }
-
-        a:hover {
-            background-color: #0062cc;
-        } 
-
-        #countdown {
+		     #countdown {
             font-size: 2.5rem;
             font-weight: bold;
             color: #ff6600;
@@ -71,10 +57,9 @@
 
     <div class="container">
         <div class="card">
-            <h1>Déconnexion</h1>
-            <p>Merci de votre visite.</p>
-            <p>Vous avez été déconnecté.</p>
-            <p>Vous allez être redirigé vers la page d'accueil dans <span id="countdown">5</span> secondes...</p>
+            <h1>Bienvenue <?php echo $_SESSION['admin']['prenom']; ?> <?php echo $_SESSION['admin']['nom']; ?></h1>
+            <p>Vous êtes maintenant connecté en tant que administrateur.</p>
+            <p>Vous allez être redirigé vers la page principale dans <span id="countdown">5</span> secondes...</p>
         </div>
     </div>
 
@@ -85,7 +70,7 @@
             document.getElementById("countdown").textContent = seconds;
             if (seconds == 0) {
                 clearInterval(countdown);
-                window.location.href = "index.php";
+                window.location.href = "principal_admin.php";
             }
         }, 1000); // mettre à jour le compte à rebours toutes les secondes
     </script>

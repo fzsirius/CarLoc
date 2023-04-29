@@ -2,19 +2,44 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Tableau de Bord...</title>
-<link rel="stylesheet" href="loccar_style.css">
+ <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Lien vers la feuille de style Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  <!-- Lien vers style personnalisée -->
+  <!--<link rel="stylesheet" href="style.css">-->
+<title>Tableau de Bord</title>
 <style>
 	body{
 		
-		margin : 100px;
+		margin-top : 100px;
 	}
-table {
-  margin: 0 auto;
+   table {
+        margin: auto;
   text-align: center;
-  border-collapse: collapse;
-}
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 30px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+  th,
+    td {
+        padding: 15px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    tr:hover {
+        background-color: #f5f5f5;
+    }
 
 .photocar {
   width: 130px;

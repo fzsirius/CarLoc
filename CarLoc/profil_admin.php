@@ -21,8 +21,11 @@ if (isset($_SESSION['admin']['id'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Profil client</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Profil admin</title>
+	 <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--<link rel="stylesheet" href="style.css">-->
+
     
     <style>
 /* Réinitialisation des styles par défaut */

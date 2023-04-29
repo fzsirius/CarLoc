@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+     <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Lien vers la feuille de style Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  <!-- Lien vers style personnalisée -->
+  <!--<link rel="stylesheet" href="style.css">-->
 	<title>Message du client</title>
 	<style>
 		body {
@@ -21,7 +29,6 @@ h1 {
 		border-collapse: collapse;
 		width: 80%;
 		background-color: #fff;
-		box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
 		border-radius: 10px;
 		overflow: hidden;
 		display: inline-block;
@@ -35,7 +42,7 @@ h1 {
 	}
 
 	th {
-		background-color: #007bff;
+		background-color: #689f38;
 		color: #fff;
 		text-transform: uppercase;
 		letter-spacing: 1px;
@@ -49,7 +56,7 @@ h1 {
 	}
 
 	a {
-			color: #0099ff;
+			color: #689f38;
 			text-decoration: none;
 			margin-top: 20px;
 			display: inline-block;
@@ -60,7 +67,7 @@ h1 {
 		}
 
 		a:hover {
-			background-color: #0099ff;
+			background-color: #689f38;
 			color: #fff;
 		}
 </style>

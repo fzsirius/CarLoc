@@ -1,7 +1,12 @@
+<!DOCTYPE html>
+<html lang="fr">
 <head>
+     <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <style>
     nav {
-      background-color: #1F224F ;
+      background-color: #689f38 ;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -64,7 +69,7 @@
     }
   </style>
 </head>
-
+<body>
 <nav>
   <div class="nav-logo">
     <a href="principal.php">
@@ -80,3 +85,5 @@
     <a href="deconnexion.php">Se déconnecter</a>
   </div>
 </nav>
+</body>
+</html>

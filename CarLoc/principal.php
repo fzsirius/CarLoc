@@ -5,10 +5,10 @@
   <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+      <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="style.css">-->	
     <title>Principal</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-	
 	<style>
 body {
   margin: 0;
@@ -20,11 +20,17 @@ body {
   display: flex;
   justify-content: center;
   padding: 50px 0;
-  background-image: url('images/ab.jpg');
   background-size: cover;
   width: 100%; 
 }
-
+.container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 form {
   display: flex;
   justify-content: space-between;
@@ -34,6 +40,8 @@ form {
   padding: 30px;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
   margin: 45px;
+      z-index: 1;
+
 }
 
 label {
@@ -119,6 +127,8 @@ input[type="submit"]:hover {
 		  
 		  
     <div class="container">
+          <video src="images/pub.mp4" autoplay loop muted></video>
+
       <form method="post" action="resultats.php"> <!-- J'AI MIS LE PARAMETRE ACTION POUR ALLER VERS UNE NOUVELLE PAGE APRES LE FORMULAIRE-->
         <label>Marque:</label>
         <input type="text" name="brand">
@@ -150,19 +160,6 @@ input[type="submit"]:hover {
 		</select>
 
 
-<!--
-        <label>Kilométrage:</label>
-        <select name="km">
-          <option value="">Tous</option>
-          <option value="0-50000">0-50,000</option>
-          <option value="50001-100000">50,001-100,000</option>
-          <option value="100001-150000">100,001-150,000</option>
-          <option value="150001-200000">150,001-200,000</option>
-          <option value="200001+">200,001 et plus</option>
-        </select>
-
--->
-
 
 
         <input type="submit" name="search" value="Recherche">
@@ -171,22 +168,7 @@ input[type="submit"]:hover {
 	
 	<br/><br/><br/>
 	
-	<?php
 
 
-// Vérifier si une session est active
-if (!isset($_SESSION['client'])) {
-    // Afficher les liens "Nouveau Client" et "Se connecter"
-    echo '<a href="nouveau.php">Nouveau Client</a>';
-    echo '<BR/>';
-    echo '<a href="connexion.php">Se connecter</a>';
-} else {
-    // Afficher un message de bienvenue et un lien pour se déconnecter
-    echo '<center>'.'Bienvenu ' . $_SESSION['client']['prenom'] . ' ' . $_SESSION['client']['nom']/*." ". $_SESSION['client']['id']*/.'</center>';
-    echo '<BR/>';echo '<BR/>';echo '<BR/>';
-    
- 
-}
-?>
   </body>
 </html>

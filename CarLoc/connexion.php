@@ -41,7 +41,7 @@ if (!empty($_POST)) {
                 'prenom' => $client['Prenom'],
                 'mail' => $client['Email'],
             );
-            header('Location: principal.php');
+            header('Location: welcome_client.php');
             exit;
         }
     }
@@ -49,15 +49,26 @@ if (!empty($_POST)) {
 ?>
 
 
-<html lang="en">
+<html lang="fr">
   <head>
+        <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Lien vers la feuille de style Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  <!-- Lien vers style personnalisée -->
+  <!--<link rel="stylesheet" href="style.css">-->
+  
+  <!-- Lien vers le fichier JavaScript de Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <!-- Lien vers fichier JavaScript personnalisée -->
+  <!--<script src="script.js"></script>-->
     <title>Connexion</title>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-      <link href="assets/css/styles.css" rel="stylesheet" />
+      
       <style>  body{
-       background-image: url('images/ab.jpg');
+       background-image: url('assets/img/a.jpg');
        background-repeat : no-repeat;
        background-size : 100% 100%;
        background-attachment:fixed;

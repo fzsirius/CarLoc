@@ -1,7 +1,12 @@
+<!DOCTYPE html>
+<html lang="fr">
 <head>
+     <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <style>
     nav {
-      background-color: #1F224F;
+      background-color: #689f38 ;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -99,43 +104,33 @@
       <img src="images/logo.png" alt="Logo">
     </a>
   </div>
-  
- <div class="nav-links">
-	<a href="graphe.php"> Dashboard</a>
-  </div>
-  
-  
-  
-  
   <div class="nav-links">
     <a href="principal_admin.php">Accueil</a>
     <div class="dropdown">
       <a href="#">Gestion des commandes</a>
       <div class="dropdown-content">
-        <a href="#">Nouvelle commande</a>
-        <a href="demandes_recues.php">Demandes Reçues</a>
-        <a href="#">Demandes refusé</a>
+        
+        <a href="demandes_recues.php">Commandes reçues</a>
+        <a href="demandes_validees.php">Commandes validées</a>
       </div>
-  
-	  
-
     </div>
         <div class="dropdown">
       <a href="#">Gestion des voitures</a>
       <div class="dropdown-content">
         <a href="ajouter.php">Nouvelle voiture</a>
         <a href="LesVoitures.php">Toutes les voitures</a>
-        <a href="#">Option 3</a>
+        
       </div>
     </div>
     <div class="dropdown">
       <a href="#">Gestion des utilisateurs</a>
       <div class="dropdown-content">
         <a href="consult_contact.php">Messages</a>
-        <a href="#">Option 2</a>
-        <a href="#">Option 3</a>
+        <a href="clients.php">Nos clients</a>
+       
       </div>
     </div>
     <a href="profil_admin.php">Profil</a>
     <a href="deconnexion.php">Deconnexion</a>
 </nav>
+</html>

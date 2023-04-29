@@ -1,8 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
+      <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Lien vers la feuille de style Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  <!-- Lien vers style personnalisée -->
+  <!--<link rel="stylesheet" href="style.css">-->
+  
+  <!-- Lien vers le fichier JavaScript de Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <!-- Lien vers fichier JavaScript personnalisée -->
+  <!--<script src="script.js"></script>-->
+    
 	<title>Messages des clients</title>
 	<style>
+    /* Style pour le titre h1 */
+    h1 {
+        color: #333;
+        margin: 30px 0;
+        text-align: center;
+    }
+
+    /* Style pour la table */
+<style>
 		body {
 			font-family: Arial, sans-serif;
 			background-color: #f2f2f2;
@@ -14,24 +38,30 @@
 		margin: 10px;
 	}
 
-	table {
-		margin: auto;
-		border-collapse: collapse;
-		width: 80%;
-		margin-top: 50px;
-	}
+	  table {
+        margin: auto;
+        border-collapse: collapse;
+        width: 95%;
+        margin-top: 30px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
 
-	th, td {
-		padding: 10px;
-		text-align: left;
-		border-bottom: 1px solid #ddd;
-	}
+	    th,
+    td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
 
-	th {
-		background-color: #007bff;
-		color: #fff;
-	}
+    th {
+        background-color: #689f38;
+        color: #fff;
+    }
 
+    tr:hover {
+        background-color: #f5f5f5;
+    }
 	#bt5 {
 		color: #0099ff;
 		text-decoration: none;
@@ -44,10 +74,11 @@
 	}
 
 	#bt5:hover {
-		background-color: #0099ff;
+		background-color: #689f38;
 		color: #fff;
 	}
 </style>
+
     </head>
 <body>
 <?php

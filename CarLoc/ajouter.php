@@ -1,12 +1,24 @@
-
 <?php require_once('include.php');?>
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Ajouter une voiture</title>
-    <link rel="stylesheet" href="loccar_style.css">
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Lien vers la feuille de style Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  <!-- Lien vers style personnalisée -->
+  <!--<link rel="stylesheet" href="style.css">-->
+  
+  <!-- Lien vers le fichier JavaScript de Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <!-- Lien vers fichier JavaScript personnalisée -->
+  <!--<script src="script.js"></script>-->
+
+  <title>Ajouter une voiture</title>
+    <style>
 
 body{
     margin : 75px;}
@@ -60,11 +72,11 @@ label {
     border: 2px solid #800000;
 }
 
-
     </style>
 </head>
 <body>
-<?php require_once('nav_admin.php');?>
+  <!-- contenu de la page -->
+    <?php require_once('nav_admin.php');?>
 <div id="container">
 	
 	<form name="formadd" action="" method="post" class="formulaire" enctype="multipart/form-data">

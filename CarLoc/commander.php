@@ -2,6 +2,7 @@
 session_start();
 
 if (isset($_SESSION['panier'])) {
+	// Remarque : vous devez remplacer les valeurs ci-dessous par les informations de connexion à votre base de données
 	$host = "localhost";
 	$db_name = "karim_carloc";
 	$username = "root";
@@ -32,7 +33,7 @@ if (isset($_SESSION['panier'])) {
 	// Vider le panier
 	unset($_SESSION['panier']);
 
-	// Afficher un message de confirmation stylisé et centré avec un lien pour revenir à la page principale
+	// on affiche un message de confirmation et  un lien pour revenir à la page principale
 	echo "<div style='background-color: #DFF2BF; border: 1px solid #4F8A10; color: #4F8A10; padding: 10px; margin: 0 auto; width: 50%; text-align: center;'>
 			Votre demande a été transmise avec succès !<br> 
 			La récupération de votre voiture se fera à l'agence sur présentation de vos papiers officiels (permis).<br><br>
