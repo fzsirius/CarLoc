@@ -101,7 +101,7 @@
 } else {
     // Rediriger l'utilisateur vers la page de connexion administrateur
     header
-("Location: demandes_recues.php");
+("Location: connexion_admin.php");
 }
 ?>
 

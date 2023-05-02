@@ -7,54 +7,90 @@
 
 	<title>Recommandation de voitures</title>
 	<style>
-		.container {
-			margin: 0 auto;
-			width: 100%;
-			padding-top: 50px;
-		}
-
-		h1 {
-			text-align: center;
-		}
-
-		.empty {
-			text-align: center;
-			font-size: 24px;
-			font-weight: bold;
-			color: #ccc;
-		}
-
-	    table {
-        margin: auto;
-        border-collapse: collapse;
-        width: 100%;
-        margin-top: 30px;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        body{margin-top : 100px;}
+  .card {
+      height: 100%;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      width: 100%;
+      margin-right: 1%;
+      margin-bottom: 20px;
+      height: 400px; /* hauteur fixe pour la carte */
     }
 
-    th,
-    td {
-        padding: 15px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
+    .col-md-4 {
+      width: 33.33%;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    th {
-        background-color: #689f38;
-        color: #fff;
+    @media (max-width: 767px) {
+      .col-md-4 {
+        width: 50%;
+      }
     }
 
-    tr:hover {
-        background-color: #f5f5f5;
+    .card-body {
+      height: calc(100% - 200px); /* hauteur fixe pour le corps de la carte */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
-        #photocar {
-  width: 90px;
-  height: 60px;
-  border-radius: 5%;
-  border: 1px solid;
+      .card:hover {
+box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+transform: translateY(-5px);
 }
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  width: 100%; 
+}
+
+
+
+    .card-title {
+      font-size: 1.2rem;
+      margin-bottom: 0;
+    }
+
+    .card-text {
+      margin-bottom: 0.5rem;
+    }
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #E30509;
+  border-color: #0062cc;
+}
+
+      
+    .center-content {
+      text-align: center;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -1%;
+    }
+
 	</style>
 </head>
 <body>
@@ -98,22 +134,20 @@ $stmt2->execute();
 $rowCount2 = $stmt2->rowCount();
                 	        // Afficher les voitures similaires dans un tableau, ou un message si aucune voiture similaire n'a été trouvée
 	        if ($rowCount2 > 0) {
-	            echo "<h2>Voitures similaires à celles que vous avez déjà commandées :</h2>";
-	            echo "<table>";
-	            echo "<tr><th>Marque</th><th>Modèle</th><th>Année</th><th>Série</th><th>Nombre de sièges</th><th>Prix par jour</th><th>Photo</th></tr>";
-	            while ($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)) {
-	                echo "<tr>";
-	                echo "<td>" . $row2['Marque'] . "</td>";
-	                echo "<td>" . $row2['Model'] ."</td>";
-	                echo "<td>" . $row2['Annee'] . "</td>";
-	                echo "<td>" . $row2['Series'] . "</td>";
-	                echo "<td>" . $row2['Nbre_sieges'] . "</td>";
-	                echo "<td>" . $row2['Prix_j'] . "</td>";
-	                echo "<td><img id = 'photocar' src='" . $row2['URL_photo'] . "' width='100px'></td>";
-	                echo "</tr>";
-	            }
-	            echo "</table>";
-	        } else {
+        echo "<h2>Voitures similaires à celles que vous avez déjà commandées :</h2>";
+        while ($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)) {
+            echo "<div class='col-md-4'>";
+            echo "<div class='card'>";
+            echo "<img class='card-img-top' src='" . $row2['URL_photo'] . "' alt='" . $row2['Marque'] . " " . $row2['Model'] . "'>";
+            echo "<div class='card-body'>";
+            echo "<h3 class='card-title'>" . $row2['Marque'] . " " . $row2['Model'] . " "   . $row2['Annee'] . "</h3>";
+           
+            echo "<p class='card-text'>Prix par jour : " . $row2['Prix_j'] . " €</p>";
+          
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
+        }} else {
 	            echo "<p style='text-align:center;font-size:24px;margin-top:50px;'>Aucune voiture similaire n'a été trouvée.</p>";
 	        }
 	    } else {
